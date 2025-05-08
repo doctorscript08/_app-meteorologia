@@ -65,3 +65,7 @@ body {
     align-items: center;
     gap: 5px;
 }
+
+.clima-descricao {
+    text-transform: capitalize;
+}
