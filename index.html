@@ -3,28 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/89154bfc44.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./src/assets/css/index.css">
-    <title>Meteorologia</title>
+    <title>APP DE CLIMA</title>
 </head>
 <body>
-    <section class="box">
-        <div class="pesquisa">
-            <input type="search" name="pesquisar" id="pesquisar" placeholder="Pesquisar por cidade">
-        </div>
-        <section class="buscas-informacoes">
-            <h1 class="pais">País</h1>
-            <div class="detalhes">
-                <h2 class="cidade">Cidade</h2>
-
-                <div class="detalhes-temperatura">
-                    <span class="temperatura">64</span>
-                    <sup class="escala">ºC</sup>
+    <header class="cabecalho">
+        <nav class="nav-bar">
+            <div class="localizacao">
+                <span class="icone"><i class="fa-solid fa-location-dot"></i></span>
+                <span class="cidade">Lubango</span>
+            </div>
+            <button class="btn-menu open"><i class="fa-solid fa-bars-staggered"></i></button>
+            <div class="mobile-menu hidden">
+                <div class="div-close"><button class="btn-menu close"><i class="fa-solid fa-xmark"></i></button></div>
+                <div class="search">
+                    <input type="search" name="pesquisa" id="pesquisa" placeholder="Cidade">
+                    <span class="icone-search"><i class="fa-solid fa-magnifying-glass"></i></span>
                 </div>
-                <span class="clima-descricao">Céu Limpo</span>
-                <span class="icone-clima">ìcone</span>
+                <div class="social-media">
+                    <a href="" target="_blank" rel="external" class="instagram"><span><i class="fa-brands fa-instagram"></i></span></a>
+                    <a href="" target="_blank" rel="external" class="tik-tok"><span><i class="fa-brands fa-tiktok"></i></span></a>
+                    <a href="" target="_blank" rel="external" class="facebook"><span><i class="fa-brands fa-facebook"></i></span></a>
+                    <a href="" target="_blank" rel="external" class="linkedin"><span><i class="fa-brands fa-linkedin"></i></span></a>
+                    <a href="" target="_blank" rel="external" class="github"><span><i class="fa-brands fa-github"></i></span></a>
+                    <a href="" target="_blank" rel="external" class="discord"><span><i class="fa-brands fa-discord"></i></span></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="corpo">
+        <section class="dados-principais">
+            <div class="left">
+                <div class="temperatura">27</div>
+                <span class="icone temp"><i class="fa-solid fa-cloud"></i></span>
+                <span class="icone deg"><i class="fa-solid fa-o"></i></span>
+                <span class="data">Qui, 12 Julho</span>
+            </div>
+            <div class="right">
+                <section class="box grupo-clima">Chuva</section>
+                <section class="box descricao-clima">Chuva forte</section>
+                <section class="box maxima">27º</section>
+                <section class="box minima">17º</section>
             </div>
         </section>
-    </section>
+        <section class="scroll">
+            <section class="dados-secundarios">
+                <div class="mini-box pressao-atmosferica">
+                    <img src="./src/assets/images/icones/pressure-gauge.png">
+                    <span class="descricao">Pressão atmosférica</span>
+                    <span class="valor-pressao-atmosferica">1012 hPa</span>
+                </div>
+                <div class="mini-box pressao-atmosferica">
+                    <img src="./src/assets/images/icones/humidity.png">
+                    <span class="descricao">Humidade</span>
+                    <span class="valor-pressao-atmosferica">10%</span>
+                </div>
+                <div class="mini-box pressao-atmosferica">
+                    <img src="./src/assets/images/icones/pressure-gauge.png">
+                    <span class="descricao">Pressão do solo</span>
+                    <span class="valor-pressao-atmosferica">1005 hPa</span>
+                </div>
+                <div class="mini-box pressao-atmosferica">
+                    <img src="./src/assets/images/icones/wind.png">
+                    <span class="descricao">Vento</span>
+                    <span class="valor-pressao-atmosferica">100m/s</span>
+                </div>
+                <div class="mini-box pressao-atmosferica">
+                    <img src="./src/assets/images/icones/overcast.png">
+                    <span class="descricao">Nebulosidade</span>
+                    <span class="valor-pressao-atmosferica">50%</span>
+                </div>
+                <div class="mini-box pressao-atmosferica">
+                    <img src="./src/assets/images/icones/snowy.png">
+                    <span class="descricao">Neve</span>
+                    <span class="valor-pressao-atmosferica">10mm</span>
+                </div>
+                <div class="mini-box pressao-atmosferica">
+                    <img src="./src/assets/images/icones/rain.png">
+                    <span class="descricao">Chuva</span>
+                    <span class="valor-pressao-atmosferica">10mm</span>
+                </div>
+                <div class="mini-box pressao-atmosferica">
+                    <img src="./src/assets/images/icones/sunrise.png">
+                    <span class="descricao">Nascer do sol</span>
+                    <span class="valor-pressao-atmosferica">06am</span>
+                </div>
+                <div class="mini-box pressao-atmosferica">
+                    <img src="./src/assets/images/icones/sunsets.png">
+                    <span class="descricao">Pôr do sol</span>
+                    <span class="valor-pressao-atmosferica">5pm</span>
+                </div>
+            </section>
+            <section class="dados-adicionais">
+                <div class="box-adicional sensibilidade">
+                    <h2 class="titulo">Sensação térmica</h2>
+                    <span class="valor">28º</span>
+                    <p class="descricao">
+                        Está mais quente do que parece! A sensação térmica está acima da temperatura real, o que pode deixar o dia mais abafado e desconfortável. Beba água e evite exposição prolongada ao sol.
+                    </p>
+                </div>
+                <div class="box-adicional visibilidade">
+                    <h2 class="titulo">Visibilidade</h2>
+                    <span class="valor">100.000m</span>
+                    <p class="descricao">
+                        A visibilidade está excelente. O céu está limpo ou pouco encoberto, ideal para dirigir, caminhar ou fazer actividades ao ar livre com segurança.
+                    </p>
+                </div>
+            </section>
+        </section>
+    </main>
+    <div class="cobertura"></div>
 
     <script src="./src/assets/js/script.js"></script>
 </body>
