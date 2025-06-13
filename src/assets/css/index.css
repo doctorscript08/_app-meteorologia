@@ -17,19 +17,8 @@ body {
     background-image: url("../images/dia.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center 20%;
     color: #fff;
-}
-
-.cobertura {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, .2);
 }
 
 .cabecalho {
@@ -42,11 +31,6 @@ body {
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
-    z-index: 2;
-}
-
-.localizacao {
-    z-index: 2;
 }
 
 .btn-menu {
@@ -54,7 +38,6 @@ body {
     color: #fff;
     font-size: 1.8rem;
     background-color: transparent;
-    z-index: 2;
 }
 
 .mobile-menu {
@@ -81,7 +64,7 @@ body {
 }
 
 .search {
-    width: 300px;
+    width: 100%;
     height: 50px;
     padding: 5px 5px;
     display: flex;
@@ -114,11 +97,34 @@ body {
 
 .social-media {
     width: 100%;
-    text-align: center;
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: space-around;
 }
 
 .social-media a {
     color: #fff;
+    transition: color .2s ease;
+}
+
+.social-media .instagram:hover {
+    color: #962fbf;
+}
+
+.social-media .tik-tok:hover {
+    color: #69C9D0;
+}
+.social-media .facebook:hover {
+    color: #1877F2;
+}
+.social-media .linkedin:hover {
+    color: #0077B5;
+}
+.social-media .github:hover {
+    color: #181717;
+}
+.social-media .discord:hover {
+    color: #5865F2;
 }
 
 .dados-principais {
@@ -139,23 +145,26 @@ body {
 
 .temperatura {
     font-size: 7rem;
+    color: rgba(255, 255, 255, .5);
     margin-bottom: -20px;
 }
 
-.temp, .deg {
+.temp,
+.deg {
     font-size: 1.3rem;
 }
 
-.left > .temp {
+.left>.temp {
     position: absolute;
     top: 0;
     left: 0;
 }
 
-.left > .deg {
+.left>.deg {
     position: absolute;
     top: 0;
     right: 0;
+    color: rgba(255, 255, 255, .5);
 }
 
 .data {
@@ -176,6 +185,7 @@ body {
 .right > .box {
     width: 48%;
     height: 50%;
+    text-transform: uppercase;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -200,7 +210,6 @@ body {
     overflow-y: auto;
     border-radius: 30px 30px 0 0;
     background-color: rgba(255, 255, 255, .5);
-    z-index: 2;
 }
 
 .dados-secundarios {
@@ -255,4 +264,119 @@ body {
 
 .hidden {
     display: none;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search {
+        width: 100%;
+        display: flex;
+        margin-bottom: 5px;
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+    #pesquisa {
+        width: 95%;
+        color: #fff;
+    }
+
+    #pesquisa::placeholder {
+        color: #fff;
+    }
+
+    .icone-search {
+        width: 5%;
+        color: #fff;
+    }
+
+    .localizacao {
+        width: 100%;
+        font-size: 1.3rem;
+        padding-left: 25px;
+    }
+
+    .open {
+        display: none;
+    }
+
+    .dados-principais {
+        justify-content: center;
+    }
+
+    .left {
+        width: 30%;
+    }
+
+    .left > .temp {
+        left: 13%;
+    }
+
+    .left > .deg {
+        right: 13%;
+    }
+
+    .right {
+        width: 30%;
+    }
+
+    .right > .box {
+        width: 35%;
+    }
+
+    .scroll {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        overflow-y: hidden;
+        background-color: transparent;
+    }
+
+    .scroll abbr {
+        text-decoration: none;
+    }
+
+    .mini-box {
+        width: 150px;
+    }
+
+    .dados-adicionais {
+        display: none;
+    }
+
+    .rodape {
+        width: 100%;
+        display: flex;
+        position: fixed;
+        bottom: 5px;
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .left > .temp {
+        left: 25%;
+    }
+
+    .left > .deg {
+        right: 25%;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .left > .temp {
+        left: 35%;
+    }
+
+    .left > .deg {
+        right: 35%;
+    }
 }
