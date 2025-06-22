@@ -16,4 +16,4 @@ Projecto pessoal de um sistema bastante simples que consome dados de uma api par
 - `/backend`: API Current Weather Data
 
 ## 🔗Link de acesso
-doctorscript08.github.io/_weather-doc
+doctorscript08.github.io/_weather-dock
