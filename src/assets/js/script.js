@@ -45,6 +45,10 @@ icone_search.addEventListener('click', () => {
     show_data()
 })
 
+icone_search.addEventListener('touchstart', () => {
+    show_data()
+})
+
 pesquisa.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         show_data()
