@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-AO">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,36 @@
     <link rel="stylesheet" href="./src/assets/css/index.css">
     <title>APP DE CLIMA</title>
 </head>
+
 <body>
     <header class="cabecalho">
         <nav class="nav-bar">
-            <div class="search hidden">
-                    <input type="search" name="pesquisa" id="pesquisa" placeholder="Cidade">
-                    <span class="icone-search"><i class="fa-solid fa-magnifying-glass"></i></span>
-            </div>
-            <div class="localizacao">
-                <span class="icone"><i class="fa-solid fa-location-dot"></i></span>
-                <span class="cidade">Lubango</span>
-            </div>
-            <button class="btn-menu open"><i class="fa-solid fa-bars-staggered"></i></button>
-            <div class="mobile-menu hidden">
-                <div class="div-close"><button class="btn-menu close"><i class="fa-solid fa-xmark"></i></button></div>
+            <section class="cima">
                 <div class="search">
-                    <input type="search" name="pesquisa" id="pesquisa" placeholder="Cidade">
+                    <input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquiar por cidade">
                     <span class="icone-search"><i class="fa-solid fa-magnifying-glass"></i></span>
                 </div>
+                <button class="btn-menu open"><i class="fa-solid fa-bars-staggered"></i></button>
+            </section>
+            <div class="localizacao">
+                <span class="icone"><i class="fa-solid fa-location-dot"></i></span>
+                <span class="cidade">Cidade</span>
+            </div>
+            <div class="mobile-menu hidden">
+                <div class="div-close"><button class="btn-menu close"><i class="fa-solid fa-xmark"></i></button></div>
                 <div class="social-media">
-                    <a href="https://www.instagram.com/doc_script/" target="_blank" rel="external" class="instagram"><span><i class="fa-brands fa-instagram"></i></span></a>
-                    <a href="https://www.tiktok.com/@doc_script" target="_blank" rel="external" class="tik-tok"><span><i class="fa-brands fa-tiktok"></i></span></a>
-                    <a href="https://www.facebook.com/profile.php?id=61577106879025" target="_blank" rel="external" class="facebook"><span><i class="fa-brands fa-facebook"></i></span></a>
-                    <a href="https://www.linkedin.com/in/kelson-de-sousa/" target="_blank" rel="external" class="linkedin"><span><i class="fa-brands fa-linkedin"></i></span></a>
-                    <a href="https://github.com/doctorscript08" target="_blank" rel="external" class="github"><span><i class="fa-brands fa-github"></i></span></a>
-                    <a href="https://discord.com/channels/@me" target="_blank" rel="external" class="discord"><span><i class="fa-brands fa-discord"></i></span></a>
+                    <a href="https://www.instagram.com/doc_script/" target="_blank" rel="external"
+                        class="instagram"><span><i class="fa-brands fa-instagram"></i></span></a>
+                    <a href="https://www.tiktok.com/@doc_script" target="_blank" rel="external" class="tik-tok"><span><i
+                                class="fa-brands fa-tiktok"></i></span></a>
+                    <a href="https://www.facebook.com/profile.php?id=61577106879025" target="_blank" rel="external"
+                        class="facebook"><span><i class="fa-brands fa-facebook"></i></span></a>
+                    <a href="https://www.linkedin.com/in/kelson-de-sousa/" target="_blank" rel="external"
+                        class="linkedin"><span><i class="fa-brands fa-linkedin"></i></span></a>
+                    <a href="https://github.com/doctorscript08" target="_blank" rel="external" class="github"><span><i
+                                class="fa-brands fa-github"></i></span></a>
+                    <a href="https://discord.com/channels/@me" target="_blank" rel="external" class="discord"><span><i
+                                class="fa-brands fa-discord"></i></span></a>
                 </div>
             </div>
         </nav>
@@ -39,105 +45,101 @@
     <main class="corpo">
         <section class="dados-principais">
             <div class="left">
-                <div class="temperatura texto-preto">27</div>
-                <span class="icone temp"><i class="fa-solid fa-cloud"></i></span>
+                <div class="temperatura texto-preto">0</div>
+                <span class="icone temp"><img src="" class="icone-temp"></span>
                 <span class="icone deg texto-preto"><i class="fa-solid fa-o"></i></span>
-                <span class="data">Qui, 12 Julho</span>
+                <span class="data">Qua, 01 Janeiro</span>
             </div>
             <div class="right">
-                <section class="box grupo-clima muda-preto texto-branco">Chuva</section>
-                <section class="box descricao-clima muda-preto texto-branco">Chuva forte</section>
-                <section class="box maxima muda-preto texto-branco">27º</section>
-                <section class="box minima muda-preto texto-branco">17º</section>
+                <section class="box grupo-clima muda-preto texto-branco"></section>
+                <section class="box descricao-clima muda-preto texto-branco"></section>
+                <section class="box maxima muda-preto texto-branco"><sup class="celsius"></sup></section>
+                <section class="box minima muda-preto texto-branco"><sup class="celsius"></sup></section>
             </div>
         </section>
         <section class="scroll">
             <section class="dados-secundarios">
-                <div class="mini-box pressao-atmosferica">
+                <div class="mini-box">
                     <img src="./src/assets/images/icones/pressure-gauge.png">
                     <span class="descricao">Pressão atmosférica</span>
-                    <span class="valor-pressao-atmosferica">1012 hPa</span>
+                    <span class="pressao-atmosferica">0</span>
                 </div>
-                <div class="mini-box pressao-atmosferica">
+                <div class="mini-box">
                     <img src="./src/assets/images/icones/humidity.png">
                     <span class="descricao">Humidade</span>
-                    <span class="valor-pressao-atmosferica">10%</span>
+                    <span class="humidade">0</span>
                 </div>
-                <div class="mini-box pressao-atmosferica">
+                <div class="mini-box">
                     <img src="./src/assets/images/icones/pressure-gauge.png">
                     <span class="descricao">Pressão do solo</span>
-                    <span class="valor-pressao-atmosferica">1005 hPa</span>
+                    <span class="pressao-solo">0</span>
                 </div>
-                <div class="mini-box pressao-atmosferica">
+                <div class="mini-box">
                     <img src="./src/assets/images/icones/wind.png">
                     <span class="descricao">Vento</span>
-                    <span class="valor-pressao-atmosferica">100m/s</span>
+                    <span class="vento">0</span>
                 </div>
-                <div class="mini-box pressao-atmosferica">
+                <div class="mini-box">
                     <img src="./src/assets/images/icones/overcast.png">
                     <span class="descricao">Nebulosidade</span>
-                    <span class="valor-pressao-atmosferica">50%</span>
+                    <span class="nebulosidade">0</span>
                 </div>
-                <div class="mini-box pressao-atmosferica">
-                    <img src="./src/assets/images/icones/snowy.png">
-                    <span class="descricao">Neve</span>
-                    <span class="valor-pressao-atmosferica">10mm</span>
-                </div>
-                <div class="mini-box pressao-atmosferica">
-                    <img src="./src/assets/images/icones/rain.png">
-                    <span class="descricao">Chuva</span>
-                    <span class="valor-pressao-atmosferica">10mm</span>
-                </div>
-                <div class="mini-box pressao-atmosferica">
+                <div class="mini-box">
                     <img src="./src/assets/images/icones/sunrise.png">
                     <span class="descricao">Nascer do sol</span>
-                    <span class="valor-pressao-atmosferica">06am</span>
+                    <span class="sunrise">0</span>
                 </div>
-                <div class="mini-box pressao-atmosferica">
+                <div class="mini-box">
                     <img src="./src/assets/images/icones/sunsets.png">
                     <span class="descricao">Pôr do sol</span>
-                    <span class="valor-pressao-atmosferica">5pm</span>
+                    <span class="sunset">0</span>
                 </div>
                 <div class="mini-box sensibilidade hidden">
                     <img src="./src/assets/images/icones/emotion-recognition.png">
                     <span class="descricao">Sensação térmica</span>
-                    <abbr title="Está mais quente do que parece! A sensação térmica está acima da temperatura real, o que pode deixar o dia mais abafado e desconfortável. Beba água e evite exposição prolongada ao sol." class="valor-pressao-atmosferica">28º</abbr>
+                    <abbr title="" class="v-sensibilidade">0</abbr>
                 </div>
                 <div class="mini-box visibilidade hidden">
                     <img src="./src/assets/images/icones/vision.png">
                     <span class="descricao">Visibilidade</span>
-                    <abbr title="A visibilidade está excelente. O céu está limpo ou pouco encoberto, ideal para dirigir, caminhar ou fazer actividades ao ar livre com segurança." class="valor-pressao-atmosferica">100.000m</abbr>
+                    <abbr
+                        title="A visibilidade está excelente. O céu está limpo ou pouco encoberto, ideal para dirigir, caminhar ou fazer actividades ao ar livre com segurança."
+                        class="v-visibilidade">0</abbr>
                 </div>
             </section>
             <section class="dados-adicionais">
                 <div class="box-adicional sensibilidade">
                     <h2 class="titulo">Sensação térmica</h2>
-                    <span class="valor">28º</span>
-                    <p class="descricao">
-                        Está mais quente do que parece! A sensação térmica está acima da temperatura real, o que pode deixar o dia mais abafado e desconfortável. Beba água e evite exposição prolongada ao sol.
-                    </p>
+                    <span class="sensibilidade-valor">0</span>
+                    <p class="recomendacao-s"></p>
                 </div>
                 <div class="box-adicional visibilidade">
                     <h2 class="titulo">Visibilidade</h2>
-                    <span class="valor">100.000m</span>
-                    <p class="descricao">
-                        A visibilidade está excelente. O céu está limpo ou pouco encoberto, ideal para dirigir, caminhar ou fazer actividades ao ar livre com segurança.
-                    </p>
+                    <span class="visibilidade-valor">0</span>
+                    <p class="recomendacao-v"></p>
                 </div>
             </section>
         </section>
         <footer class="rodape hidden">
             <div class="social-media">
-                <a href="https://www.instagram.com/doc_script/" target="_blank" rel="external" class="instagram"><span><i class="fa-brands fa-instagram"></i></span></a>
-                <a href="https://www.tiktok.com/@doc_script" target="_blank" rel="external" class="tik-tok"><span><i class="fa-brands fa-tiktok"></i></span></a>
-                <a href="https://www.facebook.com/profile.php?id=61577106879025" target="_blank" rel="external" class="facebook"><span><i class="fa-brands fa-facebook"></i></span></a>
-                <a href="https://www.linkedin.com/in/kelson-de-sousa/" target="_blank" rel="external" class="linkedin"><span><i class="fa-brands fa-linkedin"></i></span></a>
-                <a href="https://github.com/doctorscript08" target="_blank" rel="external" class="github"><span><i class="fa-brands fa-github"></i></span></a>
-                <a href="https://discord.com/channels/@me" target="_blank" rel="external" class="discord"><span><i class="fa-brands fa-discord"></i></span></a>
+                <a href="https://www.instagram.com/doc_script/" target="_blank" rel="external"
+                    class="instagram"><span><i class="fa-brands fa-instagram"></i></span></a>
+                <a href="https://www.tiktok.com/@doc_script" target="_blank" rel="external" class="tik-tok"><span><i
+                            class="fa-brands fa-tiktok"></i></span></a>
+                <a href="https://www.facebook.com/profile.php?id=61577106879025" target="_blank" rel="external"
+                    class="facebook"><span><i class="fa-brands fa-facebook"></i></span></a>
+                <a href="https://www.linkedin.com/in/kelson-de-sousa/" target="_blank" rel="external"
+                    class="linkedin"><span><i class="fa-brands fa-linkedin"></i></span></a>
+                <a href="https://github.com/doctorscript08" target="_blank" rel="external" class="github"><span><i
+                            class="fa-brands fa-github"></i></span></a>
+                <a href="https://discord.com/channels/@me" target="_blank" rel="external" class="discord"><span><i
+                            class="fa-brands fa-discord"></i></span></a>
             </div>
         </footer>
     </main>
 
+    <script src="./api_key.js"></script>
     <script src="./src/assets/js/script.js"></script>
 </body>
+
 </html>
