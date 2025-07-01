@@ -159,11 +159,6 @@ body {
     margin-bottom: -20px;
 }
 
-.temp,
-.deg {
-    font-size: 1.3rem;
-}
-
 .left>.temp {
     position: absolute;
     top: 0;
@@ -172,8 +167,9 @@ body {
 
 .left>.deg {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 6%;
+    right: 4%;
+    font-size: 1.8rem;
     color: rgba(255, 255, 255, .5);
 }
 
@@ -207,7 +203,7 @@ body {
 }
 
 .celsius {
-    font-size: 0.6rem;
+    font-size: 1rem;
     position: absolute;
     top: 30%;
     left: 58%;

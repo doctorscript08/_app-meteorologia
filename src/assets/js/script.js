@@ -42,16 +42,16 @@ const icone_search = document.querySelector('.icone-search')
 
 
 icone_search.addEventListener('click', () => {
-    show_data()
+    request_climate_data()
 })
 
 icone_search.addEventListener('touchstart', () => {
-    show_data()
+    request_climate_data()
 })
 
 pesquisa.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        show_data()
+        request_climate_data()
     }
 })
 
@@ -63,44 +63,83 @@ celsius.forEach(deg => {
 
 const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 
-const dias = ['Dom','Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
+const dias = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
 
 const data = document.querySelector('.data')
 var date = new Date()
 data.innerHTML = dias[date.getDay()] + ', ' + (date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()) + ' ' + meses[date.getUTCMonth()]
 
+window.addEventListener('load', request_current_city = () => {
+    if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const request = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&lang=pt_br&appid=${key}`)
+
+            const data = await request.json()
+            show_data(data)
+        })
+    } else {
+        console.log('Geolocation não está disponível no seu navegador!')
+    }
+})
+
 const request_climate_data = async () => {
     const request = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${pesquisa.value}&units=metric&lang=pt_br&appid=${key}`)
     const data = await request.json()
-    return data
+    show_data(data)
 }
 
-const show_data = () => {
-    (async () => {
-        const climate_data = await request_climate_data()
-        document.querySelector('.cidade').innerHTML = climate_data['name']
-        document.querySelector('.temperatura').innerHTML = Math.floor(climate_data['main']['temp'])
-        document.querySelector('.icone-temp').setAttribute('src', `https://openweathermap.org/img/wn/${climate_data['weather']['0']['icon']}.png`)
-        document.querySelector('.grupo-clima').innerHTML = climate_data['weather']['0']['main']
-        document.querySelector('.descricao-clima').innerHTML = climate_data['weather']['0']['description']
-        document.querySelector('.maxima').innerHTML += Math.floor(climate_data['main']['temp_max'])
-        document.querySelector('.minima').innerHTML += Math.floor(climate_data['main']['temp_min'])
-        document.querySelector('.pressao-atmosferica').innerHTML = climate_data['main']['pressure'] + " hPa"
-        document.querySelector('.humidade').innerHTML = climate_data['main']['humidity'] + " %"
-        document.querySelector('.pressao-solo').innerHTML = climate_data['main']['sea_level'] + " hPa"
-        document.querySelector('.vento').innerHTML = climate_data['wind']['speed'] + " m/s"
-        document.querySelector('.nebulosidade').innerHTML = climate_data['clouds']['all'] + "%"
-        document.querySelector('.sunrise').innerHTML = horaFormatada(climate_data['sys']['sunrise']) + " am"
-        document.querySelector('.sunset').innerHTML = horaFormatada(climate_data['sys']['sunset']) + " pm"
-        document.querySelector('.v-sensibilidade').innerHTML = Math.floor(climate_data['main']['feels_like'])
+let max = document.createElement('sup')
+max.setAttribute('class', 'celsius')
+max.innerHTML = 'º'
 
+let min = document.createElement('sup')
+min.setAttribute('class', 'celsius')
+min.innerHTML = 'º'
+
+const show_data = (climate_data) => {
+    (async () => {
+        //const climate_data = await request_current_city()
+
+        document.querySelector('.cidade').innerHTML = climate_data['name']
+
+        document.querySelector('.temperatura').innerHTML = Math.floor(climate_data['main']['temp'])
+
+        document.querySelector('.icone-temp').setAttribute('src', `https://openweathermap.org/img/wn/${climate_data['weather']['0']['icon']}.png`)
+
+        document.querySelector('.grupo-clima').innerHTML = climate_data['weather']['0']['main']
+
+        document.querySelector('.descricao-clima').innerHTML = climate_data['weather']['0']['description']
+
+        const maxima = document.querySelector('.maxima')
+        maxima.innerHTML = Math.floor(climate_data['main']['temp_max'])
+        maxima.appendChild(max)
+
+        const minima = document.querySelector('.minima')
+        minima.innerHTML = Math.floor(climate_data['main']['temp_min'])
+        minima.appendChild(min)
+
+        document.querySelector('.pressao-atmosferica').innerHTML = climate_data['main']['pressure'] + " hPa"
+
+        document.querySelector('.humidade').innerHTML = climate_data['main']['humidity'] + " %"
+
+        document.querySelector('.pressao-solo').innerHTML = climate_data['main']['sea_level'] + " hPa"
+
+        document.querySelector('.vento').innerHTML = climate_data['wind']['speed'] + " m/s"
+
+        document.querySelector('.nebulosidade').innerHTML = climate_data['clouds']['all'] + "%"
+
+        document.querySelector('.sunrise').innerHTML = horaFormatada(climate_data['sys']['sunrise']) + " am"
+
+        document.querySelector('.sunset').innerHTML = horaFormatada(climate_data['sys']['sunset']) + " pm"
+
+        document.querySelector('.v-sensibilidade').innerHTML = Math.floor(climate_data['main']['feels_like'])
         recomendacaoClima(Math.floor(climate_data['main']['feels_like']), Math.floor(climate_data['main']['temp']))
 
         document.querySelector('.v-visibilidade').innerHTML = climate_data['visibility'] + "m"
-
         recomendacaoVisibilidade(climate_data['visibility'])
 
         document.querySelector('.sensibilidade-valor').innerHTML = Math.floor(climate_data['main']['feels_like'])
+
         document.querySelector('.visibilidade-valor').innerHTML = climate_data['visibility'] + "m"
     })()
 }
