@@ -3,6 +3,7 @@ const close = document.querySelector(".close")
 const mobile_menu = document.querySelector(".mobile-menu")
 const pesquisa = document.querySelector('#pesquisa')
 
+//Menu
 open.addEventListener('click', () => {
     mobile_menu.classList.remove("hidden")
 })
@@ -11,6 +12,7 @@ close.addEventListener('click', () => {
     mobile_menu.classList.add("hidden")
 })
 
+//Mudança do tema de acordo ao período do dia
 var hora = new Date().getHours()
 const boxes = document.querySelectorAll('.muda-preto')
 const wTexts = document.querySelectorAll('.texto-branco')
@@ -38,14 +40,15 @@ if (hora >= 12 && hora < 24) {
     })
 }
 
+//Pesquisa da cidade e demonstração dos dados
 const icone_search = document.querySelector('.icone-search')
-
 
 icone_search.addEventListener('click', () => {
     request_climate_data()
 })
 
 icone_search.addEventListener('touchstart', () => {
+    e.preventDefault();
     request_climate_data()
 })
 
@@ -53,12 +56,6 @@ pesquisa.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         request_climate_data()
     }
-})
-
-const celsius = document.querySelectorAll('.celsius')
-
-celsius.forEach(deg => {
-    deg.innerHTML = deg.innerHTML = "\u{4f}"
 })
 
 const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
@@ -98,8 +95,6 @@ min.innerHTML = 'º'
 
 const show_data = (climate_data) => {
     (async () => {
-        //const climate_data = await request_current_city()
-
         document.querySelector('.cidade').innerHTML = climate_data['name']
 
         document.querySelector('.temperatura').innerHTML = Math.floor(climate_data['main']['temp'])
