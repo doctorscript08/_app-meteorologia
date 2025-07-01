@@ -16,4 +16,4 @@ Projecto pessoal de um sistema bastante simples que consome dados de uma api par
 - `/backend`: Consumo da API externa Current Weather Data (OpenWeather)
 
 ## 🔗Link de acesso
-doctorscript08.github.io/_weather-dock
+doctorscript08.github.io/_weather
