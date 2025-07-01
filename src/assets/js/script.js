@@ -47,10 +47,10 @@ icone_search.addEventListener('click', () => {
     request_climate_data()
 })
 
-icone_search.addEventListener('touchstart', () => {
+/*icone_search.addEventListener('touchstart', () => {
     e.preventDefault();
     request_climate_data()
-})
+})*/
 
 pesquisa.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
