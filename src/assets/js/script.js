@@ -1,3 +1,4 @@
+const key = "15664aa649a2a8e715e072b60293a990"
 const open = document.querySelector(".open")
 const close = document.querySelector(".close")
 const mobile_menu = document.querySelector(".mobile-menu")
